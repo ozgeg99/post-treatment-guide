@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dentakay — Post-Treatment Care Guide</title>
+  <meta name="description" content="Patient oral hygiene instructions for implants, sinus lift, temporary PMMA restorations, and crowns."/>
+  <link rel="preconnect" href="https://images.assets-landingi.com" crossorigin>
+
+  <!-- Arabic-capable font (fallbacks keep Arabic visible even if this is blocked) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#f6f9fb;
+    --panel:#ffffff;
+    --ink:#0f172a;
+    --muted:#64748b;
+    --brand:#0ea5e9;
+    --accent:#38bdf8;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(2,8,20,.06);
+    --ring:#e8eef5;
+    --pill:#0b84d6;
+  }
+
+  /* Make in-page jumps land below sticky header/banner */
+  section[id] { scroll-margin-top: clamp(72px, 12vw, 120px); }
+
+  html, body { font-size: 18px !important; }
+  *{box-sizing:border-box}
+  html,body{
+    margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family: system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,
+                 "Noto Naskh Arabic","Noto Kufi Arabic","Amiri",sans-serif;
+    line-height:1.6;word-wrap:break-word;overflow-x:hidden
+  }
+
+  /* Removed global :lang(ar) override to avoid flipping whole UI font stack */
+
+  img{max-width:100%;display:block;height:auto}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:20px}
+
+  .header{
+    background:linear-gradient(120deg,#fafdff,#eef6fb);
+    border:1px solid var(--ring);
+    border-radius:20px;
+    padding:14px 16px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    box-shadow:var(--shadow)
+  }
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img.logo{width:140px;height:auto}
+  .tag{font-size:12px;color:#0369a1;background:#e6f6fe;border:1px solid #c7e9fb;border-radius:999px;padding:6px 10px;font-weight:600}
+
+  .print-btn{
+    display:inline-block;background:var(--brand);color:#fff;border-radius:12px;
+    padding:10px 14px;font-weight:700;box-shadow:0 2px 0 rgba(14,165,233,.35)
+  }
+  .print-btn:hover{opacity:.96;text-decoration:none}
+
+  /* Language banner */
+  .lang-banner{
+    margin-top:12px;
+    background:var(--panel);
+    border:1px solid var(--ring);
+    box-shadow:var(--shadow);
+    border-radius:16px;
+    padding:12px;
+    display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between;
+  }
+  .lang-banner h2{margin:0;font-size:16px;color:#0b3b64;letter-spacing:.02em}
+  .lang-pills{display:flex;flex-wrap:wrap;gap:8px}
+  .lang-pill{
+    border:1px solid var(--ring);
+    background:#f1f8ff;
+    color:#073b63;
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:700;
+    cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:transform .05s ease;
+    user-select:none;
+  }
+  .lang-pill:active{transform:scale(0.98)}
+  .lang-pill.active{
+    background:var(--pill);
+    color:#fff;
+    border-color:transparent;
+    box-shadow:0 2px 0 rgba(0,0,0,.08);
+  }
+  .lang-flag{font-size:18px;line-height:1}
+
+  /* Layout using logical/grid areas for easy RTL flip */
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(0,280px) 1fr;
+    grid-template-areas: "toc main";
+    gap:22px;
+    margin-top:18px
+  }
+  nav.toc{
+    grid-area: toc;
+    position:sticky; inset-block-start:14px; align-self:start;
+    background:var(--panel);border:1px solid var(--ring);
+    padding:12px;border-radius:16px;box-shadow:var(--shadow)
+  }
+  .toc h3{margin:6px 8px 8px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .toc a{display:block;padding:10px 12px;border-radius:12px;color:var(--ink);font-size:15px}
+  .toc a:hover{background:#f1f6fb}
+  main{grid-area: main; display:grid;gap:16px}
+
+  .card{background:var(--panel);border:1px solid var(--ring);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+
+  /* Card hero images */
+  .card-hero-img{
+    width:100%;
+    height: clamp(140px, 30vw, 220px);
+    object-fit:cover;
+    display:block;
+  }
+
+  details{border-bottom:1px solid var(--ring)}
+  details:last-of-type{border-bottom:none}
+  summary{
+    list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:10px;
+    text-align:start;
+  }
+  summary::-webkit-details-marker{display:none}
+  .chev{transition:transform .2s; display:inline-block}
+  details[open] .chev{transform:rotate(90deg)}
+  .content{padding-inline:16px; padding-block-end:16px}
+  ul{margin:8px 0 0 0; padding-inline-start:18px}
+  li{margin:6px 0}
+
+  .note{
+    margin-top:14px;background:#f3f9ff;border:1px dashed #cfe8ff;color:#0b3b64;
+    border-radius:14px;padding:12px 14px;font-size:14px
+  }
+
+  footer{margin:18px 0 10px;color:var(--muted);font-size:13px}
+
+  @media (max-width: 768px) { .print-btn { display: none !important; } }
+  @media (max-width: 900px){
+    .layout{grid-template-columns:1fr !important; grid-template-areas:"main" "toc"}
+    .header{flex-wrap:wrap;gap:10px}
+    .brand img.logo{width:120px}
+    .wrap{padding:16px}
+    html, body, .wrap { overflow-x:hidden !important; }
+    .lang-banner{gap:12px}
+    .lang-banner h2{flex:1 1 100%}
+  }
+
+  /* Multilingual visibility */
+  .lang{display:block}
+  html.js .lang{display:none}
+  html.js .lang.active{display:block}
+
+  /* Print only active language */
+  @media print{
+    html.js .lang{display:none !important}
+    html.js .lang.active{display:block !important}
+    .lang-banner,.lang-switch{display:none !important}
+  }
+
+  /* Stop hero image cropping on small screens */
+  @media (max-width: 640px){
+    .card-hero-img{
+      height: auto !important;
+      width: 100%;
+      object-fit: contain !important;
+      aspect-ratio: auto;
+      background: #fff;
+    }
+  }
+
+  /* === Panel-scoped RTL for Arabic === */
+  .lang[data-lang="ar"]{
+    direction: rtl;
+    unicode-bidi: isolate;
+    text-align: start;
+    font-family: "Noto Naskh Arabic","Tahoma","Arial","Amiri",sans-serif !important;
+  }
+  .lang[data-lang="ar"] summary{ text-align: start; }
+  .lang[data-lang="ar"] .chev{ transform: scaleX(-1); }
+  .lang[data-lang="ar"] details[open] .chev{ transform: rotate(-90deg) scaleX(-1); }
+  .lang[data-lang="ar"] .layout{
+    display:grid;
+    grid-template-columns: 1fr minmax(0,280px);
+    grid-template-areas: "main toc";
+  }
+  .lang[data-lang="ar"] ul {
+    padding-right: 20px;
+    padding-left: 0;
+  }
+
+  /* --- Mobile Arabic hard override --- */
+  @media (max-width: 900px){
+    .lang[data-lang="ar"].active,
+    .lang[data-lang="ar"][aria-hidden="false"],
+    #panel-ar.lang.active{
+      display:block !important;
+      visibility:visible !important;
+      opacity:1 !important;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="brand">
+        <img class="logo" alt="Dentakay" src="https://images.assets-landingi.com/uc/e34dd985-8162-4e83-bc2c-071f754e0ef4/PMG.crop_348x85_77,35.preview.png"/>
+        <!-- i18n-enabled title -->
+        <h1 class="tag i18n" data-key="title">Post-Treatment Care Guide</h1>
+      </div>
+      <div class="lang-switch" aria-hidden="true">
+        <button type="button" class="print-btn" id="printBtn">Print</button>
+      </div>
+    </header>
+
+    <!-- Language banner -->
+    <section class="lang-banner" role="region" aria-label="Language selection">
+      <!-- i18n-enabled banner heading -->
+      <h2 class="i18n" data-key="banner">View this guide in your language</h2>
+      <div class="lang-pills" role="tablist" aria-label="Languages" aria-orientation="horizontal">
+        <button id="tab-en" class="lang-pill" data-lang="en" role="tab" aria-selected="true" aria-controls="panel-en"><span class="lang-flag">🇬🇧</span> English</button>
+        <button id="tab-tr" class="lang-pill" data-lang="tr" role="tab" aria-selected="false" aria-controls="panel-tr"><span class="lang-flag">🇹🇷</span> Türkçe</button>
+        <button id="tab-fr" class="lang-pill" data-lang="fr" role="tab" aria-selected="false" aria-controls="panel-fr"><span class="lang-flag">🇫🇷</span> Français</button>
+        <button id="tab-ar" class="lang-pill" data-lang="ar" role="tab" aria-selected="false" aria-controls="panel-ar"><span class="lang-flag">🇸🇦</span> العربية</button>
+        <button id="tab-es" class="lang-pill" data-lang="es" role="tab" aria-selected="false" aria-controls="panel-es"><span class="lang-flag">🇪🇸</span> Español</button>
+      </div>
+      <div id="langStatus" class="tag" aria-live="polite" style="background:#eef7ff;border-color:#d9ecff;color:#05507d">English selected</div>
+    </section>
+    <!-- ========== ENGLISH ========== -->
+    <div class="lang active" data-lang="en" id="panel-en" role="tabpanel" aria-labelledby="tab-en" aria-hidden="false" tabindex="0">
+      <div class="note">Follow the steps that match your treatment.</div>
+
+      <div class="layout">
+        <nav class="toc" aria-label="On this page">
+          <h3>Content</h3>
+          <a href="#en-implants">Implants</a>
+          <a href="#en-implant-signs">Signs of Implant Issues</a>
+          <a href="#en-sinus">Sinus Lift Procedure</a>
+          <a href="#en-pmma">Temporary PMMA Restorations</a>
+          <a href="#en-crowns">Crowns</a>
+        </nav>
+
+        <main>
+          <section id="en-implants" class="card">
+            <img class="card-hero-img" alt="Implants" loading="lazy"
+              src="https://images.assets-landingi.com/uc/669e38e2-b039-4022-b731-45eb2bd84ad0/implant.jpg"/>
+
+            <details open>
+              <summary>Oral Hygiene Instructions<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Brush at least twice a day, ideally within 30–60 minutes after meals.</li>
+                  <li>Use a new soft-bristled toothbrush.</li>
+                  <li>Use gentle circular motions around the implant area.</li>
+                  <li>Choose a non-abrasive toothpaste to avoid scratching the surface.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Mouthwash & Rinsing<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Avoid alcohol-based mouthwashes.</li>
+                  <li>Rinse with salted water for 20–30 seconds, 2–3 times daily, especially after meals.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Healing & Habits<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>No smoking for at least two weeks post-surgery.</li>
+                  <li>Limit alcohol; it may slow healing and interact with medication.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Diet Guidance<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Prefer a soft diet for the first few days.</li>
+                  <li>Avoid hot, spicy, or crunchy foods while healing.</li>
+                  <li>Limit sugary and acidic foods.</li>
+                  <li>Do not chew hard items like ice or pens.</li>
+                  <li>Avoid toothpicks or blunt objects around the gums.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="en-implant-signs" class="card">
+            <img class="card-hero-img" alt="Signs of implant issues" loading="lazy"
+              src="https://images.assets-landingi.com/uc/dfad7ae4-9975-42c5-ad9b-3f53dbce8a33/SignsofImplantIssues.jpg"/>
+
+            <details open>
+              <summary>When to Contact Dentakay After-Care Team<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Redness, swelling, pain, or unusual mobility around the implant. If noted, contact our after-care representative promptly.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="en-sinus" class="card">
+            <img class="card-hero-img" alt="Sinus lift procedure" loading="lazy"
+              src="https://images.assets-landingi.com/uc/682f9f31-b8b9-4b54-96f4-79f771a818e8/SinusLiftProcedure1.jpg"/>
+
+            <details open>
+              <summary>Pressure Control & Activity<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Avoid sneezing, coughing, or blowing your nose for 2–3 weeks. If you must sneeze, keep your mouth open.</li>
+                  <li>No heavy lifting, bending, or vigorous exercise that increases sinus pressure.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Habits & Rinsing<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Avoid smoking for the first 2–3 months.</li>
+                  <li>No straws for at least 1–2 weeks.</li>
+                  <li>Brush and rinse gently, avoiding the surgical site.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="en-pmma" class="card">
+            <img class="card-hero-img" alt="Temporary PMMA restorations" loading="lazy"
+              src="https://images.assets-landingi.com/uc/31039dcd-3fd8-49e7-a94c-9e2ec1a27108/TemporaryPMMARestorations.jpg"/>
+
+            <details open>
+              <summary>Purpose & Limitations<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Not designed for chewing or biting. Avoid hard or sticky foods like nuts, crusts, gum, ice, or tough meat.</li>
+                  <li>Main purpose is aesthetic during healing.</li>
+                  <li>Do not test their strength on hard foods.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Cleaning Routine<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Brush gently twice daily with a soft brush and non-abrasive toothpaste.</li>
+                  <li>Rinse daily with a non-alcoholic mouthwash.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="en-crowns" class="card">
+            <img class="card-hero-img" alt="Crowns" loading="lazy"
+              src="https://images.assets-landingi.com/uc/65ddbbe9-4da8-479f-b1cc-18d8ead12edb/crowns.jpg"/>
+
+            <details open>
+              <summary>Daily Care<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Use a new soft-bristled toothbrush and non-abrasive toothpaste twice daily.</li>
+                  <li>Use daily mouthwash to control bacteria. Avoid alcohol-based products.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Eating & Sensitivity<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Avoid sticky and hard foods that increase pressure.</li>
+                  <li>Limit sugary foods and drinks to protect crown margins.</li>
+                  <li>If sensitivity occurs, avoid very hot or cold foods for a time.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- /ENGLISH -->
+
+    <!-- ========== TÜRKÇE ========== -->
+    <div class="lang" data-lang="tr" id="panel-tr" role="tabpanel" aria-labelledby="tab-tr" aria-hidden="true" tabindex="-1">
+      <div class="note">Lütfen kendi tedavinize uygun adımları takip edin.</div>
+
+      <div class="layout">
+        <nav class="toc" aria-label="Bu sayfada">
+          <h3>İçerik</h3>
+          <a href="#tr-implants">İmplantlar</a>
+          <a href="#tr-implant-signs">İmplant Sorun Belirtileri</a>
+          <a href="#tr-sinus">Sinüs Lifting İşlemi</a>
+          <a href="#tr-pmma">Geçici PMMA Restorasyonları</a>
+          <a href="#tr-crowns">Kronlar</a>
+        </nav>
+
+        <main>
+          <section id="tr-implants" class="card">
+            <img class="card-hero-img" alt="İmplantlar" loading="lazy"
+              src="https://images.assets-landingi.com/uc/fb2b66d0-7a64-4020-abf4-381180b9781c/trimplant.jpg"/>
+
+            <details open>
+              <summary>Ağız Hijyeni Talimatları<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Günde en az iki kez, tercihen her öğünden sonra 30–60 dakika içinde fırçalayın.</li>
+                  <li>Yeni ve yumuşak kıllı diş fırçası kullanın.</li>
+                  <li>İmplant çevresinde nazik, dairesel hareketlerle fırçalayın.</li>
+                  <li>Aşındırıcı olmayan diş macunu tercih edin.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Ağız Gargarası & Çalkalama<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Alkol bazlı gargaralardan kaçının.</li>
+                  <li>Günde 2–3 kez, özellikle yemeklerden sonra 20–30 saniye tuzlu suyla çalkalayın.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>İyileşme & Alışkanlıklar<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Ameliyat sonrası en az iki hafta sigara içmeyin.</li>
+                  <li>Alkolü sınırlayın. İyileşmeyi yavaşlatabilir ve ilaçlarla etkileşebilir.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Beslenme Rehberi<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>İlk birkaç gün yumuşak gıdaları tercih edin.</li>
+                  <li>İyileşme sırasında sıcak, baharatlı veya kıtır gıdalardan kaçının.</li>
+                  <li>Şekerli ve asitli gıdaları sınırlayın.</li>
+                  <li>Buz veya kalem gibi sert nesneleri ısırmayın.</li>
+                  <li>Diş eti çevresinde kürdan gibi cisimler kullanmayın.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="tr-implant-signs" class="card">
+            <img class="card-hero-img" alt="İmplant sorunlarının belirtileri" loading="lazy"
+              src="https://images.assets-landingi.com/uc/de9adfb4-4a7d-4f5f-acee-31bb2d274843/trissues.jpg"/>
+
+            <details open>
+              <summary>Dentakay Tedavi Sonrası Ekibi ile Ne Zaman İletişime Geçilmeli?<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>İmplant çevresinde kızarıklık, şişlik, ağrı veya olağandışı hareketlilik. Bu belirtilerden herhangi birini fark ederseniz, lütfen derhal tedavi sonrası bakım temsilcimizle iletişime geçin.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="tr-sinus" class="card">
+            <img class="card-hero-img" alt="Sinüs lifting işlemi" loading="lazy"
+              src="https://images.assets-landingi.com/uc/4332c68f-e20a-4993-85e5-14b2494ac2f4/trsinus.jpg"/>
+
+            <details open>
+              <summary>Basınç Kontrolü & Aktivite<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>İlk 2–3 hafta hapşırma, öksürme ve burun temizlemekten kaçının. Hapşırmanız gerekirse ağzınızı açık tutun.</li>
+                  <li>Ağır kaldırma, eğilme ve yoğun egzersizlerden kaçının.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Alışkanlıklar & Çalkalama<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>İlk 2–3 ay sigara içmeyin.</li>
+                  <li>En az 1–2 hafta pipet kullanmayın.</li>
+                  <li>Cerrahi bölgeden uzak durarak nazikçe fırçalayın ve çalkalayın.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="tr-pmma" class="card">
+            <img class="card-hero-img" alt="Geçici PMMA restorasyonları" loading="lazy"
+              src="https://images.assets-landingi.com/uc/587f81e5-b79f-4e7c-8467-68f684f98df2/trpmma.jpg"/>
+
+            <details open>
+              <summary>Amacı & Sınırlamalar<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Çiğneme için tasarlanmamıştır. Kuruyemiş, kabuk, sakız, buz veya sert etler gibi sert/yapışkan gıdalardan kaçının.</li>
+                  <li>Temel amacı iyileşme sürecinde estetik görünüm sağlamaktır.</li>
+                  <li>Sert gıdalarla dayanıklılığını test etmeyin.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Temizlik Rutini<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Yumuşak fırça ve aşındırıcı olmayan macunla günde iki kez nazikçe fırçalayın.</li>
+                  <li>Günlük olarak alkolsüz ağız gargarası kullanın.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="tr-crowns" class="card">
+            <img class="card-hero-img" alt="Kronlar" loading="lazy"
+              src="https://images.assets-landingi.com/uc/9f2c3b81-ec06-49c7-8456-9a0359b19354/trcrown.jpg"/>
+
+            <details open>
+              <summary>Günlük Bakım<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Yeni ve yumuşak kıllı fırça kullanın. Aşındırıcı olmayan macunla günde iki kez fırçalayın.</li>
+                  <li>Bakteri kontrolü için günlük gargara kullanın. Alkollü ürünlerden kaçının.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Beslenme & Hassasiyet<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Yapışkan ve sert gıdalardan uzak durun.</li>
+                  <li>Kron kenarlarını korumak için şekerli yiyecek ve içecekleri sınırlayın.</li>
+                  <li>Hassasiyet olursa bir süre çok sıcak/soğuk yiyeceklerden kaçının.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- /TÜRKÇE -->
+    
+    <!-- ========== FRANÇAIS ========== -->
+    <div class="lang" data-lang="fr" id="panel-fr" role="tabpanel" aria-labelledby="tab-fr" aria-hidden="true" tabindex="-1">
+      <div class="note">Suivez uniquement les étapes qui correspondent à votre traitement.</div>
+
+      <div class="layout">
+        <nav class="toc" aria-label="Sommaire">
+          <h3>Contenu</h3>
+          <a href="#fr-implants">Implants</a>
+          <a href="#fr-implant-signs">Signes de problème d’implant</a>
+          <a href="#fr-sinus">Élévation sinusienne</a>
+          <a href="#fr-pmma">Provisoires en PMMA</a>
+          <a href="#fr-crowns">Couronnes</a>
+        </nav>
+
+        <main>
+          <section id="fr-implants" class="card">
+            <img class="card-hero-img" alt="Implants" loading="lazy"
+              src="https://images.assets-landingi.com/uc/8e079b77-3418-4735-b744-c5f6a8ad4b44/frimplant.jpg"/>
+
+            <details open>
+              <summary>Consignes d’hygiène bucco-dentaire<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Brossez au moins deux fois par jour, idéalement 30–60 minutes après les repas.</li>
+                  <li>Utilisez une brosse à dents neuve à poils souples.</li>
+                  <li>Brossez en mouvements circulaires doux autour de l’implant.</li>
+                  <li>Choisissez un dentifrice non abrasif afin d’éviter de rayer la surface.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Bain de bouche & rinçage<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Évitez les bains de bouche contenant de l’alcool.</li>
+                  <li>Rincez à l’eau salée 20–30 secondes, 2 à 3 fois par jour, surtout après les repas.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Cicatrisation & habitudes<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Ne fumez pas pendant au moins deux semaines après l’intervention.</li>
+                  <li>Limitez l’alcool. Il peut ralentir la cicatrisation et interagir avec vos traitements.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Conseils alimentaires<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Privilégiez une alimentation molle les premiers jours.</li>
+                  <li>Évitez les aliments très chauds, épicés ou croquants pendant la cicatrisation.</li>
+                  <li>Limitez les aliments sucrés et acides.</li>
+                  <li>Évitez de mâcher des objets durs comme la glace ou des stylos.</li>
+                  <li>N’utilisez pas de cure-dents ou d’objets pouvant blesser la gencive.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="fr-implant-signs" class="card">
+            <img class="card-hero-img" alt="Signes de problèmes avec l’implant" loading="lazy"
+              src="https://images.assets-landingi.com/uc/28a230bb-c746-4f57-9c0a-5bdad1bd9386/frissues.jpg"/>
+
+            <details open>
+              <summary>Quand contacter l’équipe de suivi post-traitement Dentakay<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Rougeur, gonflement, douleur ou mobilité inhabituelle autour de l’implant. Si vous remarquez l’un de ces signes, contactez rapidement notre représentant du suivi post-traitement.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="fr-sinus" class="card">
+            <img class="card-hero-img" alt="Élévation sinusienne" loading="lazy"
+              src="https://images.assets-landingi.com/uc/4a419e2a-70ee-4d87-94de-f49d7427607c/frsinus.jpg"/>
+
+            <details open>
+              <summary>Contrôle de la pression & activité<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Évitez d’éternuer, de tousser ou de vous moucher pendant 2–3 semaines. Si vous devez éternuer, gardez la bouche ouverte.</li>
+                  <li>Pas de port de charges lourdes, de flexions marquées ni d’exercice intensif qui augmente la pression dans les sinus.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Habitudes & rinçage<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Ne fumez pas durant les 2–3 premiers mois.</li>
+                  <li>Pas de paille pendant au moins 1–2 semaines.</li>
+                  <li>Brossez et rincez doucement en évitant la zone opérée.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="fr-pmma" class="card">
+            <img class="card-hero-img" alt="Provisoires en PMMA" loading="lazy"
+              src="https://images.assets-landingi.com/uc/1bda9d66-9ac3-495d-a280-20be716de863/frmma.jpg"/>
+
+            <details open>
+              <summary>Objectif & limites<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Non conçus pour mastiquer ou mordre. Évitez les aliments durs ou collants comme les fruits secs, croûtes, chewing-gum, glaçons ou viandes coriaces.</li>
+                  <li>Leur objectif principal est esthétique pendant la cicatrisation.</li>
+                  <li>N’essayez pas d’en tester la résistance avec des aliments durs.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Routine de nettoyage<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Brossez en douceur deux fois par jour avec une brosse souple et un dentifrice non abrasif.</li>
+                  <li>Utilisez un bain de bouche sans alcool chaque jour.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="fr-crowns" class="card">
+            <img class="card-hero-img" alt="Couronnes" loading="lazy"
+              src="https://images.assets-landingi.com/uc/4679d111-40b5-4614-bbf9-2f48575e6d3d/crown.jpg"/>
+
+            <details open>
+              <summary>Soin quotidien<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Utilisez une brosse souple neuve et un dentifrice non abrasif deux fois par jour.</li>
+                  <li>Un bain de bouche quotidien aide à contrôler les bactéries. Évitez ceux contenant de l’alcool.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Alimentation & sensibilité<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Évitez les aliments collants et durs qui augmentent la pression.</li>
+                  <li>Limitez les aliments et boissons sucrés pour protéger les bords de la couronne.</li>
+                  <li>En cas de sensibilité, évitez temporairement les aliments très chauds ou très froids.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- /FRANÇAIS -->
+    
+    <!-- ========== ESPAÑOL ========== -->
+    <div class="lang" data-lang="es" id="panel-es" role="tabpanel" aria-labelledby="tab-es" aria-hidden="true" tabindex="-1" lang="es">
+      <div class="note">Sigue únicamente los pasos que correspondan a tu tratamiento.</div>
+
+      <div class="layout">
+        <nav class="toc" aria-label="Contenido">
+          <h3>Contenido</h3>
+          <a href="#es-implants">Implantes</a>
+          <a href="#es-implant-signs">Señales de problemas con el implante</a>
+          <a href="#es-sinus">Elevación del seno maxilar</a>
+          <a href="#es-pmma">Prótesis temporales de PMMA</a>
+          <a href="#es-crowns">Coronas</a>
+        </nav>
+
+        <main>
+          <section id="es-implants" class="card">
+            <img class="card-hero-img" alt="Implantes" loading="lazy"
+              src="https://images.assets-landingi.com/uc/18eda9da-f6ed-460d-be8c-7abb69f8542e/Implantes.jpg"/>
+
+            <details open>
+              <summary>Instrucciones de higiene oral<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Cepíllate al menos dos veces al día, idealmente 30–60 minutos después de las comidas.</li>
+                  <li>Usa un cepillo nuevo de cerdas suaves.</li>
+                  <li>Realiza movimientos circulares suaves alrededor del área del implante.</li>
+                  <li>Elige una pasta de dientes no abrasiva para evitar rayar la superficie.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Enjuagues y colutorio<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Evita los colutorios con alcohol.</li>
+                  <li>Enjuágate con agua salada durante 20–30 segundos, 2–3 veces al día, especialmente después de comer.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Cicatrización y hábitos<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>No fumes durante al menos dos semanas después de la cirugía.</li>
+                  <li>Limita el alcohol; puede retrasar la cicatrización e interactuar con la medicación.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Guía de alimentación<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Prefiere una dieta blanda durante los primeros días.</li>
+                  <li>Evita alimentos muy calientes, picantes o crujientes durante la cicatrización.</li>
+                  <li>Limita los alimentos y bebidas azucarados o ácidos.</li>
+                  <li>No mastiques objetos duros como hielo o bolígrafos.</li>
+                  <li>Evita palillos u objetos que puedan dañar la encía.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="es-implant-signs" class="card">
+            <img class="card-hero-img" alt="Señales de problemas con el implante" loading="lazy"
+              src="https://images.assets-landingi.com/uc/b2b7c5f3-e6ab-4ac6-8daa-fa973564d206/issues.jpg"/>
+
+            <details open>
+              <summary>Cuándo contactar con el equipo de seguimiento de Dentakay<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Enrojecimiento, hinchazón, dolor o movilidad inusual alrededor del implante. Si notas alguno de estos signos, contacta pronto con nuestro representante de seguimiento.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="es-sinus" class="card">
+            <img class="card-hero-img" alt="Elevación del seno maxilar" loading="lazy"
+              src="https://images.assets-landingi.com/uc/01eae376-bc3b-4546-831c-fde6ebb8d9b2/sinus.jpg"/>
+
+            <details open>
+              <summary>Control de presión y actividad<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Evita estornudar, toser o sonarte durante 2–3 semanas. Si debes estornudar, mantén la boca abierta.</li>
+                  <li>No levantes peso ni hagas ejercicio intenso que aumente la presión en los senos paranasales.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Hábitos y enjuagues<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Evita fumar durante los primeros 2–3 meses.</li>
+                  <li>No uses pajitas al menos durante 1–2 semanas.</li>
+                  <li>Cepíllate y enjuágate con suavidad, evitando la zona quirúrgica.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="es-pmma" class="card">
+            <img class="card-hero-img" alt="Prótesis temporales de PMMA" loading="lazy"
+              src="https://images.assets-landingi.com/uc/2ba1cd21-8582-4f7d-9cef-c4ad1453c1e3/pmma.jpg"/>
+
+            <details open>
+              <summary>Finalidad y limitaciones<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>No están diseñadas para masticar o morder. Evita alimentos duros o pegajosos como frutos secos, cortezas, chicle, hielo o carnes fibrosas.</li>
+                  <li>Su finalidad principal es estética durante la cicatrización.</li>
+                  <li>No pruebes su resistencia con alimentos duros.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Rutina de limpieza<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Cepíllate suavemente dos veces al día con cepillo suave y pasta no abrasiva.</li>
+                  <li>Usa a diario un colutorio sin alcohol.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <section id="es-crowns" class="card">
+            <img class="card-hero-img" alt="Coronas" loading="lazy"
+              src="https://images.assets-landingi.com/uc/342bedb0-2028-48e8-af67-d909967b8e4c/crowns.jpg"/>
+
+            <details open>
+              <summary>Cuidado diario<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Usa un cepillo nuevo de cerdas suaves y pasta no abrasiva dos veces al día.</li>
+                  <li>Un colutorio diario ayuda a controlar las bacterias. Evita productos con alcohol.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Alimentación y sensibilidad<span class="chev" aria-hidden="true">›</span></summary>
+              <div class="content">
+                <ul>
+                  <li>Evita alimentos pegajosos y duros que incrementen la presión.</li>
+                  <li>Limita los azúcares para proteger los márgenes de la corona.</li>
+                  <li>Si aparece sensibilidad, evita temporalmente alimentos muy fríos o muy calientes.</li>
+                </ul>
+              </div>
+            </details>
+          </section>
+        </main>
+      </div>
+    </div>
+    <!-- /ESPAÑOL -->
+    <!-- ========== ARABIC ========== -->
+<div class="lang" data-lang="ar" id="panel-ar" role="tabpanel" aria-labelledby="tab-ar" aria-hidden="true" tabindex="-1" dir="rtl">
+  <div class="note">اتبع الخطوات التي تطابق علاجك.</div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="على هذه الصفحة">
+      <h3>المحتوى</h3>
+      <a href="#ar-implants">زرعات الأسنان</a>
+      <a href="#ar-implant-signs">علامات وجود مشاكل في الزرعة</a>
+      <a href="#ar-sinus">إجراء رفع الجيوب الانفية</a>
+      <a href="#ar-pmma">تعليمات العناية للتركيبات المؤقتة المصنوعة من PMMA</a>
+      <a href="#ar-crowns">التيجان السنية (الكراون)</a>
+    </nav>
+
+    <main>
+      <!-- زرعات الأسنان -->
+      <section id="ar-implants" class="card">
+        <img class="card-hero-img" alt="زرعات الأسنان" loading="lazy"
+          src="https://images.assets-landingi.com/uc/f532078b-acc0-44cc-8497-f64a51b738fa/implant.jpg"/>
+
+        <details open>
+          <summary>تعليمات العناية بصحة الفم<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>قم بتنظيف الأسنان مرتين على الأقل يوميًا، ويفضل بعد كل وجبة، خلال 30 دقيقة إلى ساعة من تناول الطعام.</li>
+              <li>استخدم فرشاة أسنان ناعمة جديدة لتجنب تلف اللثة أو الزرعة.</li>
+              <li>طريقة التنظيف: استخدم حركات دائرية لطيفة لتنظيف المنطقة المحيطة بالزرعة.</li>
+              <li>معجون الأسنان: استخدم معجون غير كاشط. تجنب المنتجات الكاشطة التي قد تخدش سطح الزرعة.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>غسول الفم والمضمضة<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>تجنب استخدام غسول الفم المحتوي على الكحول لأنه قد يسبب تهيجًا في اللثة.</li>
+              <li>قم بـ المضمضة بماء مالح لمدة 20-30 ثانية ثم ابصق، 2-3 مرات يوميًا، خاصة بعد الأكل.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>التعافي والعادات<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>تجنب التدخين لمدة أسبوعين على الأقل بعد الجراحة، لأنه قد يعيق عملية الشفاء ويزيد من خطر فشل الزرعة.</li>
+              <li>قلل من تناول الكحول لأنه قد يعيق الشفاء ويتفاعل سلبًا مع الأدوية.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>نظام الأكل<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>اتبع نظامًا غذائيًا طريا في الأيام الأولى لتجنب تهيج مكان الجراحة.</li>
+              <li>تجنب الأطعمة الساخنة أو الحارة أو المقرمشة، لأنها قد تهيج الأنسجة المتعافية.</li>
+              <li>قلل من تناول الأطعمة السكرية والحامضية، حيث تسهم في تراكم البلاك وأمراض اللثة.</li>
+              <li>تجنب مضغ الأطعمة الصلبة أو الأشياء مثل (الثلج، الأقلام)، لأنها قد تؤدي إلى تلف الزرعة.</li>
+              <li>لا تستخدم أعواد الأسنان أو أي أجسام حادة لتجنب إيذاء اللثة.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- علامات وجود مشاكل في الزرعة -->
+      <section id="ar-implant-signs" class="card">
+        <img class="card-hero-img" alt="علامات وجود مشاكل في الزرعة" loading="lazy"
+          src="https://images.assets-landingi.com/uc/1f47ff49-8e14-4ae0-bf3e-dad920cfb108/issues.jpg"/>
+
+        <details open>
+          <summary>متى يجب عليك التواصل مع فريق دينتاكاي<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>كن يقظًا لظهور أي علامات تدل على وجود التهاب أو مشاكل، مثل: احمرار، تورم، ألم حول الزرعة، أو حركة غير طبيعية. في حال ظهور أي من هذه العلامات، يرجى التواصل مع قسم العناية بالمرضى لدى عيادتنا.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- إجراء رفع الجيوب الانفية -->
+      <section id="ar-sinus" class="card">
+        <img class="card-hero-img" alt="إجراء رفع الجيوب الانفية" loading="lazy"
+          src="https://images.assets-landingi.com/uc/47d8adae-7726-4a5c-99a3-d50f02766879/sinus.jpg"/>
+
+        <details open>
+          <summary>الأنشطة والتحكم بالضغط<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>حاول تجنب العطس أو السعال أو نفخ الأنف لمدة 2-3 أسابيع بعد الجراحة. إذا اضطررت للعطس، فافتح فمك لتقليل الضغط على منطقة الجيوب الأنفية.</li>
+              <li>تجنب الأنشطة البدنية الشاقة مثل حمل الأشياء الثقيلة، أو الانحناء، أو ممارسة التمارين الرياضية القوية.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>العادات وغسول الفم<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>من الأفضل تجنب التدخين لمدة 2-3 أشهر على الأقل. وكلما طالت مدة الامتناع، زادت فرصة الشفاء بشكل أفضل.</li>
+              <li>تجنب استخدام الشفاطات (القشّات) عند شرب السوائل لمدة 1-2 أسبوع.</li>
+              <li>نظّف بلطف، وتجنب تنظيف موقع الجراحة مباشرة بالفرشاة.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- تعليمات العناية للتركيبات المؤقتة المصنوعة من PMMA -->
+      <section id="ar-pmma" class="card">
+        <img class="card-hero-img" alt="تعليمات العناية للتركيبات المؤقتة المصنوعة من PMMA" loading="lazy"
+          src="https://images.assets-landingi.com/uc/5c0d3bbb-b411-47ec-8c9b-91ab72ed3c0d/pmma.jpg"/>
+
+        <details open>
+          <summary>الهدف والممنوعات<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>التركيبات المؤقتة ليست مخصصة للمضغ أو العض. تجنب المضغ أو العض باستخدامها، خصوصًا على الأطعمة الصلبة أو اللزجة مثل المكسرات، قشرة الخبز، العلكة، الثلج، أو اللحوم القاسية.</li>
+              <li>الغرض الأساسي منها جمالي لتوفير مظهر طبيعي أثناء فترة التعافي.</li>
+              <li>لا تختبر قوتها بمضغ أطعمة قاسية.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>نظام التنظيف<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>نظّف بلطف مرتين يوميًا باستخدام فرشاة ناعمة ومعجون غير كاشط.</li>
+              <li>استخدم غسول فم خالٍ من الكحول يوميًا لتقليل البكتيريا والحفاظ على صحة اللثة.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>تجنب: <span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>الأطعمة القاسية أو اللزجة: المكسرات، خبز الباجيت، اللحوم الصلبة، العلكة، أو الحلوى اللاصقة.</li>
+              <li>العض المباشر على التفاح أو الخضروات النيئة — بدلاً من ذلك، قطع الطعام إلى قطع صغيرة وناعمة.</li>
+              <li>التدخين، لأنه قد يؤدي إلى تصبغ وإضعاف المادة المؤقتة.</li>
+              <li>صرير الأسنان أو الضغط عليها — وإذا نصحك الطبيب، استخدم واقي اسنان ليلي لحماية التركيبات.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- التيجان السنية (الكراون) -->
+      <section id="ar-crowns" class="card">
+        <img class="card-hero-img" alt="التيجان السنية (الكراون)" loading="lazy"
+          src="https://images.assets-landingi.com/uc/79acc23f-420c-47f5-ab8c-acd51f213f36/crown.jpg"/>
+
+        <details open>
+          <summary>العناية اليومية<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>استخدم فرشاة ناعمة جديدة ونظّف برفق مرتين يوميًا باستخدام معجون غير كاشط.</li>
+              <li>استخدم غسول فم يومي للمساعدة في التحكم بالبكتيريا.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>الأكل والحساسية<span class="chev" aria-hidden="true">›</span></summary>
+          <div class="content">
+            <ul>
+              <li>تجنب غسولات الفم المحتوية على الكحول لأنها قد تهيّج اللثة وتسبب الجفاف.</li>
+              <li>تجنب الأطعمة اللزجة أو الصلبة لتقليل الضغط الزائد على التاج.</li>
+              <li>تجنب الأطعمة والمشروبات السكرية لتقليل خطر تسوس الأسنان، خاصة حول حواف التاج.</li>
+              <li>إذا شعرت بحساسية تجاه الحرارة أو البرودة، تجنب الأطعمة أو المشروبات شديدة السخونة أو البرودة، علمًا أن هذه الحساسية غالبًا ما تزول بمرور الوقت.</li>
+              <li>قم بعمل فحوصات دورية كل 6 أشهر للحفاظ على صحة الفم والتركيبات.</li>
+              <li>إذا كنت تضغط على أسنانك أثناء النوم، فكر في استخدام واقي اسنان ليلي.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+    </main>
+  </div>
+</div>
+<!-- /ARABIC -->
+
+  </div> <!-- /.wrap -->
+
+<script>
+/* Progressive enhancement marker */
+document.documentElement.classList.add('js');
+
+(function(){
+  const pills  = Array.from(document.querySelectorAll('.lang-pill'));
+  const panels = Array.from(document.querySelectorAll('.lang[data-lang]'));
+  const status = document.getElementById('langStatus');
+
+  const LANGS = ['en','tr','fr','ar','es'];
+  const LANG_NAMES = { en:'English', tr:'Türkçe', fr:'Français', ar:'العربية', es:'Español' };
+  const qs = new URLSearchParams(location.search);
+  const stripLangPrefix = (id) => id.replace(/^([a-z]{2})-/, '');
+
+  // UI translations (title + banner)
+  const I18N = {
+    en: { title:'Post-Treatment Care Guide', banner:'View this guide in your language' },
+    tr: { title:'Tedavi Sonrası Bakım Rehberi', banner:'Bu rehberi kendi dilinizde görüntüleyin' },
+    fr: { title:'Guide de soins post-traitement', banner:'Consultez ce guide dans votre langue' },
+    ar: { title:'دليل العناية بعد العلاج', banner:'اعرض هذا الدليل بلغتك' },
+    es: { title:'Guía de cuidados post-tratamiento', banner:'Consulta esta guía en tu idioma' }
+  };
+
+  function applyI18n(lang){
+    const dict = I18N[lang] || I18N.en;
+    document.querySelectorAll('.i18n[data-key]').forEach(el=>{
+      const k = el.getAttribute('data-key');
+      if (dict[k]) el.textContent = dict[k];
+    });
+  }
+
+  const state = { lang: null };
+
+  function wireTOC(lang){
+    const active = document.querySelector(`.lang[data-lang="${lang}"]`);
+    if (!active) return;
+    active.querySelectorAll('nav.toc a[href^="#"]').forEach(a => {
+      const raw = a.getAttribute('href').slice(1);
+      const base = stripLangPrefix(raw);
+      a.setAttribute('href', `#${lang}-${base}`);
+    });
+  }
+
+  function forceArabicVisibleIfSelected(){
+    // Some builders inline-hide panels on mobile; beat that explicitly
+    const arPanel = document.getElementById('panel-ar');
+    if (!arPanel) return;
+
+    if (state.lang === 'ar') {
+      arPanel.style.display    = 'block';
+      arPanel.style.visibility = 'visible';
+      arPanel.style.opacity    = '1';
+    } else {
+      // Return control to CSS for other languages
+      arPanel.style.removeProperty('display');
+      arPanel.style.removeProperty('visibility');
+      arPanel.style.removeProperty('opacity');
+    }
+  }
+
+  function setLang(lang){
+    const chosen = LANGS.includes(lang) ? lang : LANGS[0];
+    state.lang = chosen;
+
+    // Keep RTL scoped to AR panel only; do not flip <html dir>
+    document.documentElement.setAttribute('lang', chosen);
+
+    panels.forEach(p => {
+      const on = p.dataset.lang === chosen;
+      p.classList.toggle('active', on);
+      p.setAttribute('aria-hidden', on ? 'false' : 'true');
+      p.setAttribute('tabindex', on ? '0' : '-1');
+    });
+
+    // Mobile Arabic hard-fix (wins against builder rules)
+    forceArabicVisibleIfSelected();
+
+    pills.forEach(btn => {
+      const on = btn.dataset.lang === chosen;
+      btn.classList.toggle('active', on);
+      btn.setAttribute('aria-selected', String(on));
+    });
+
+    if (status) status.textContent = `${LANG_NAMES[chosen]} selected`;
+
+    try { localStorage.setItem('dk_lang', chosen); } catch(e){}
+
+    const url = new URL(location.href);
+    url.searchParams.set('lang', chosen);
+    history.replaceState({}, '', url.toString());
+
+    applyI18n(chosen);
+    wireTOC(chosen);
+
+    // If a hash exists, align it to the new language and scroll
+    if (location.hash) {
+      const raw = location.hash.slice(1);
+      const base = stripLangPrefix(raw);
+      const targetId = `${chosen}-${base}`;
+      const el = document.getElementById(targetId);
+      if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+  }
+
+  // Initial language: query > localStorage > browser > en
+  const fromQuery   = (qs.get('lang') || '').toLowerCase();
+  const fromStorage = (()=>{ try { return (localStorage.getItem('dk_lang')||'').toLowerCase(); } catch(e){ return '' }})();
+  const fromBrowser = (navigator.language || 'en').slice(0,2).toLowerCase();
+  const initial = fromQuery || fromStorage || (LANGS.includes(fromBrowser) ? fromBrowser : 'en');
+
+  setLang(initial);
+  applyI18n(initial); // ensure title/banner localized on first paint
+
+  // Click on language pills
+  pills.forEach(p => p.addEventListener('click', () => setLang(p.dataset.lang)));
+
+  // Intercept ToC clicks to always target the active language
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('nav.toc a[href^="#"]');
+    if (!a) return;
+    e.preventDefault();
+
+    const raw = a.getAttribute('href').slice(1); // may be en-implants or implants
+    const base = stripLangPrefix(raw);
+    const targetId = `${state.lang}-${base}`;
+    const el = document.getElementById(targetId);
+    if (!el) return;
+
+    a.setAttribute('href', `#${targetId}`); // keep URL copyable
+    const url = new URL(location.href);
+    url.hash = `#${targetId}`;
+    history.replaceState({}, '', url.toString());
+    el.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+
+  // Re-apply visibility when switching into/out of the mobile breakpoint
+  try {
+    const mq = window.matchMedia('(max-width: 900px)');
+    const reapply = () => forceArabicVisibleIfSelected();
+    mq.addEventListener ? mq.addEventListener('change', reapply)
+                        : mq.addListener && mq.addListener(reapply);
+  } catch(e){}
+
+  // Also re-affirm after orientation changes / resizes
+  let t;
+  window.addEventListener('resize', () => {
+    clearTimeout(t);
+    t = setTimeout(() => {
+      wireTOC(state.lang);
+      forceArabicVisibleIfSelected();
+    }, 120);
+  }, { passive:true });
+})();
+</script>
+
+
+</body>
+</html>
