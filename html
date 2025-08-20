@@ -149,9 +149,10 @@
   @media (max-width: 768px) { .print-btn { display: none !important; } }
   @media (max-width: 900px){
     .layout{grid-template-columns:1fr !important; grid-template-areas:"main" "toc"}
+    .lang[data-lang="ar"] .layout{grid-template-columns:1fr !important; grid-template-areas:"main" "toc" !important}
     .header{flex-wrap:wrap;gap:10px}
     .brand img.logo{width:120px}
-    .wrap{padding:16px}
+    .wrap{width:100vw !important; max-width:none !important;}
     html, body, .wrap { overflow-x:hidden !important; }
     .lang-banner{gap:12px}
     .lang-banner h2{flex:1 1 100%}
@@ -231,16 +232,18 @@
       <!-- i18n-enabled banner heading -->
       <h2 class="i18n" data-key="banner">View this guide in your language</h2>
       <div class="lang-pills" role="tablist" aria-label="Languages" aria-orientation="horizontal">
-        <button id="tab-en" class="lang-pill" data-lang="en" role="tab" aria-selected="true" aria-controls="panel-en"><span class="lang-flag">🇬🇧</span> English</button>
-        <button id="tab-tr" class="lang-pill" data-lang="tr" role="tab" aria-selected="false" aria-controls="panel-tr"><span class="lang-flag">🇹🇷</span> Türkçe</button>
-        <button id="tab-fr" class="lang-pill" data-lang="fr" role="tab" aria-selected="false" aria-controls="panel-fr"><span class="lang-flag">🇫🇷</span> Français</button>
-        <button id="tab-ar" class="lang-pill" data-lang="ar" role="tab" aria-selected="false" aria-controls="panel-ar"><span class="lang-flag">🇸🇦</span> العربية</button>
-        <button id="tab-es" class="lang-pill" data-lang="es" role="tab" aria-selected="false" aria-controls="panel-es"><span class="lang-flag">🇪🇸</span> Español</button>
+<div class="lang-pills" role="tablist" aria-label="Languages" aria-orientation="horizontal">
+  <button id="tab-en" class="lang-pill" type="button" data-lang="en" role="tab" aria-selected="true" aria-controls="panel-en"><span class="lang-flag">🇬🇧</span> English</button>
+  <button id="tab-tr" class="lang-pill" type="button" data-lang="tr" role="tab" aria-selected="false" aria-controls="panel-tr"><span class="lang-flag">🇹🇷</span> Türkçe</button>
+  <button id="tab-fr" class="lang-pill" type="button" data-lang="fr" role="tab" aria-selected="false" aria-controls="panel-fr"><span class="lang-flag">🇫🇷</span> Français</button>
+    <button id="tab-es" class="lang-pill" type="button" data-lang="es" role="tab" aria-selected="false" aria-controls="panel-es"><span class="lang-flag">🇪🇸</span> Español</button>
+  <button id="tab-ar" class="lang-pill" type="button" data-lang="ar" role="tab" aria-selected="false" aria-controls="panel-ar"><span class="lang-flag">🇸🇦</span> العربية</button>
+
       </div>
       <div id="langStatus" class="tag" aria-live="polite" style="background:#eef7ff;border-color:#d9ecff;color:#05507d">English selected</div>
     </section>
     <!-- ========== ENGLISH ========== -->
-    <div class="lang active" data-lang="en" id="panel-en" role="tabpanel" aria-labelledby="tab-en" aria-hidden="false" tabindex="0">
+    <div class="lang active" data-lang="en" id="panel-en" lang="en" role="tabpanel" aria-labelledby="tab-en" aria-hidden="false" tabindex="0">
       <div class="note">Follow the steps that match your treatment.</div>
 
       <div class="layout">
@@ -395,7 +398,7 @@
     <!-- /ENGLISH -->
 
     <!-- ========== TÜRKÇE ========== -->
-    <div class="lang" data-lang="tr" id="panel-tr" role="tabpanel" aria-labelledby="tab-tr" aria-hidden="true" tabindex="-1">
+    <div class="lang" data-lang="tr" id="panel-tr" lang="tr" role="tabpanel" aria-labelledby="tab-tr" aria-hidden="true" tabindex="-1">
       <div class="note">Lütfen kendi tedavinize uygun adımları takip edin.</div>
 
       <div class="layout">
@@ -705,8 +708,8 @@
     <!-- /FRANÇAIS -->
     
     <!-- ========== ESPAÑOL ========== -->
-    <div class="lang" data-lang="es" id="panel-es" role="tabpanel" aria-labelledby="tab-es" aria-hidden="true" tabindex="-1" lang="es">
-      <div class="note">Sigue únicamente los pasos que correspondan a tu tratamiento.</div>
+<div class="lang" data-lang="es" id="panel-es" lang="es" role="tabpanel" aria-labelledby="tab-es" aria-hidden="true" tabindex="-1"> 
+  <div class="note">Sigue únicamente los pasos que correspondan a tu tratamiento.</div>
 
       <div class="layout">
         <nav class="toc" aria-label="Contenido">
@@ -859,7 +862,7 @@
     </div>
     <!-- /ESPAÑOL -->
     <!-- ========== ARABIC ========== -->
-<div class="lang" data-lang="ar" id="panel-ar" role="tabpanel" aria-labelledby="tab-ar" aria-hidden="true" tabindex="-1" dir="rtl">
+<div class="lang" data-lang="ar" id="panel-ar" lang="ar" role="tabpanel" aria-labelledby="tab-ar" aria-hidden="true" tabindex="-1" dir="rtl">
   <div class="note">اتبع الخطوات التي تطابق علاجك.</div>
 
   <div class="layout">
@@ -1105,8 +1108,10 @@ document.documentElement.classList.add('js');
     const chosen = LANGS.includes(lang) ? lang : LANGS[0];
     state.lang = chosen;
 
-    // Keep RTL scoped to AR panel only; do not flip <html dir>
+    const isArabic = chosen === 'ar';
     document.documentElement.setAttribute('lang', chosen);
+    // Flip page direction when Arabic is active
+    document.documentElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
 
     panels.forEach(p => {
       const on = p.dataset.lang === chosen;
